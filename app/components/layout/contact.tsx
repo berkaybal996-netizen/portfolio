@@ -131,7 +131,7 @@ export default function PortfolioHero() {
                         href="https://www.linkedin.com/in/berkaybal99"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="
+                        className=" items-center justify-center mx-auto
               text-green-400 text-sm font-medium
               hover:text-green-300 transition-colors duration-200
               underline underline-offset-4 decoration-green-400/40 type-mono
