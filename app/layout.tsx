@@ -6,7 +6,7 @@ import { LanguageProvider } from "./lib/i18n";
 
 
 
-
+<meta name="google-site-verification" content="ealhZoxYNPKo76MMelKp2tp6tsZsww6KLNGOqPow9kE" />
 
 export const metadata: Metadata = {
   title: "Berkay Bal | UX/UI Designer & Frontend Developer",
