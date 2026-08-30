@@ -6,12 +6,14 @@ import { LanguageProvider } from "./lib/i18n";
 
 
 
-<meta name="google-site-verification" content="ealhZoxYNPKo76MMelKp2tp6tsZsww6KLNGOqPow9kE" />
+
 
 export const metadata: Metadata = {
   title: "Berkay Bal | UX/UI Designer & Frontend Developer",
   description: "UX/UI designer and frontend developer focused on accessible, high-performance React and Next.js interfaces.",
-
+  metadataBase: new URL(
+    "https://portfolio-iota-six-5ypspuk27h.vercel.app"
+  ),
   keywords: [
     "Berkay Bal",
     "Frontend Developer",
@@ -26,7 +28,9 @@ export const metadata: Metadata = {
       name: "Berkay Bal",
     },
   ],
-
+  verification: {
+    google: "ealhZoxYNPKo76MMelKp2tp6tsZsww6KLNGOqPow9kE",
+  },
   icons: {
     icon: [
       {
