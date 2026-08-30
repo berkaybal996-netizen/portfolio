@@ -11,7 +11,7 @@ const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/developer?id=Berkay+
 const socialLinks = [
     { label: "Behance", href: "https://www.behance.net/berkaybal99", icon: BehanceLogo },
     { label: "GitHub", href: "https://github.com/berkaybal996-netizen/", icon: GithubLogo },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/berkaybal99", icon: LinkedinLogo },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/berkay-bal99/", icon: LinkedinLogo },
   
 
 ];

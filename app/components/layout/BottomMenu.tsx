@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { BehanceLogo, GithubLogo, LinkedinLogo } from "@phosphor-icons/react"
 
 const menuItems = [
-    { id: "github", label: "GitHub", href: "https://github.com/berkaybal99", icon: <GithubLogo weight="duotone" style={{ width: '100%', height: '100%' }} /> },
+    { id: "github", label: "GitHub", href: "https://github.com/berkaybal996-netizen/", icon: <GithubLogo weight="duotone" style={{ width: '100%', height: '100%' }} /> },
     { id: "behance", label: "Behance", href: "https://www.behance.net/berkaybal99", icon: <BehanceLogo weight="duotone" style={{ width: '100%', height: '100%' }} /> },
-    { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/berkaybal99", icon: <LinkedinLogo weight="duotone" style={{ width: '100%', height: '100%' }} /> },
+    { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/berkay-bal99/", icon: <LinkedinLogo weight="duotone" style={{ width: '100%', height: '100%' }} /> },
 ];
 
 const BottomMenu = () => {
