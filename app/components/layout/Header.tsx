@@ -82,9 +82,9 @@ const Header = () => {
                 </div>
 
                 {/* below md the nav drops to its own scrollable row so nothing clips */}
-                <nav className="no-scrollbar -mx-5 mt-2 flex gap-2 overflow-x-auto px-5 text-xs md:hidden">
+                <nav className="flex w-full items-center justify-between gap-2 mt-2 text-xs md:hidden">
                     {navItems.map((item) => (
-                        <a key={item.href} href={item.href} className={navLinkClass}>
+                        <a key={item.href} href={item.href} className={`${navLinkClass} flex-1 text-center`}>
                             {item.label}
                         </a>
                     ))}
