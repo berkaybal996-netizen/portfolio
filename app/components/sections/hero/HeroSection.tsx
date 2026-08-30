@@ -12,7 +12,7 @@ const socialLinks = [
     { label: "Behance", href: "https://www.behance.net/berkaybal99", icon: BehanceLogo },
     { label: "GitHub", href: "https://github.com/berkaybal99", icon: GithubLogo },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/berkaybal99", icon: LinkedinLogo },
-    { label: "Google Play", href: "https://play.google.com/store/apps/developer?id=Berkay+BAL", icon: GooglePlayLogoIcon },
+  
 
 ];
 
@@ -25,7 +25,7 @@ const HeroSection = () => {
                 <DragText text="BERKAY" data-type="andy" />
                 <DragText text="BAL" outline />
             </div>
-<span className="text-white type-primary"> Product Designer | Frontend Developer</span>
+            <span className="text-white type-primary"> Product Designer | Frontend Developer</span>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-2 sm:gap-3 type-mono">
                 {socialLinks.map(({ label, href, icon: Icon }) => (
                     <a
