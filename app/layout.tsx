@@ -82,10 +82,25 @@ export default function RootLayout({
 
           <CursorController />
           {/* User's custom cursor */}
-          <div id="user-cursor" className="pointer-events-none fixed top-0 left-0 z-[10000] flex flex-col items-start -translate-x-[2px] -translate-y-[2px]">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87c.45 0 .67-.54.35-.85L5.85 2.86a.5.5 0 0 0-.85.35z" fill="#0D99FF" stroke="white" strokeWidth="1.5" />
+          <div
+            id="user-cursor"
+            className="hidden md:flex pointer-events-none fixed top-0 left-0 z-[10000] flex-col items-start -translate-x-[2px] -translate-y-[2px]"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87c.45 0 .67-.54.35-.85L5.85 2.86a.5.5 0 0 0-.85.35z"
+                fill="#0D99FF"
+                stroke="white"
+                strokeWidth="1.5"
+              />
             </svg>
+
             <div className="ml-[14px] -mt-[6px] px-2 py-0.5 bg-[#0D99FF] text-[11px] text-white font-bold rounded-md rounded-tl-none whitespace-nowrap shadow-md">
               You
             </div>
