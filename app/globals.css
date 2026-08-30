@@ -1,0 +1,393 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/font/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/font/SpaceGrotesk-SemiBold.ttf") format("truetype");
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("/font/DMMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-primary: "Space Grotesk";
+  --font-mono: "DM Mono";
+}
+
+
+.type-primary {
+  font-family: var(--font-primary);
+}
+
+.type-mono {
+  font-family: var(--font-mono);
+}
+
+.type-mono-bold {
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+/* =========================
+   CANVAS GRID (DOT BACKGROUND)
+========================= */
+html,
+body,
+* {
+  cursor: none !important;
+}
+
+body {
+
+  background: #050505;
+}
+
+/* anchor targets clear the fixed header */
+section[id],
+div[id="Work"] {
+  scroll-margin-top: 116px;
+}
+
+@media (min-width: 768px) {
+
+  section[id],
+  div[id="Work"] {
+    scroll-margin-top: 96px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* header sits above the blurred backdrop it creates */
+.site-header>* {
+  position: relative;
+  z-index: 1;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+#user-cursor,
+#global-cursor {
+  font-family: var(--font-mono);
+  will-change: transform, opacity;
+}
+
+
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+}
+
+/* =========================
+   HERO LAYER SYSTEM
+========================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* content always above canvas */
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================
+   DRAG TEXT
+========================= */
+
+.drag-text {
+  font-family: var(--font-primary);
+  font-size: clamp(5rem, 14vw, 14rem);
+  font-weight: 700;
+  line-height: .85;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  will-change: transform;
+  display: inline-block;
+  position: relative;
+  cursor: grab;
+  user-select: none;
+  color: #f0f0f0;
+  display: inline-block;
+
+
+
+
+  /* smooth drag feel */
+  will-change: transform;
+}
+
+.drag-text:active {
+  cursor: grabbing;
+}
+
+.drag-text:active {
+  cursor: grabbing;
+}
+
+/* OUTLINE STYLE (REFF yazısı gibi) */
+.drag-text.outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #f0f0f0
+}
+
+
+
+.drag-box[data-type="andy"] {
+
+  .andy-box {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+  }
+
+  .andy-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  .andy-box:hover::after {
+    opacity: 1;
+  }
+}
+
+/* optional glow vibe */
+.drag-text:hover {
+  opacity: 0.9;
+  animation-duration: 2000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+
+
+.selection-box {
+  position: absolute;
+  inset: -10px;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.selection-box.figma-mode {
+  border: 1.5px solid #0D99FF;
+}
+
+.handle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border: 1.5px solid #0D99FF;
+  display: none;
+}
+
+.selection-box.figma-mode .handle {
+  display: block;
+}
+
+
+
+/* HANDLE’LAR */
+.handle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+}
+
+/* köşeler */
+.tl {
+  top: -3px;
+  left: -3px;
+}
+
+.tr {
+  top: -3px;
+  right: -3px;
+}
+
+.bl {
+  bottom: -3px;
+  left: -3px;
+}
+
+.br {
+  bottom: -3px;
+  right: -3px;
+}
+
+
+
+
+
+
+
+.cursor-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.fake-toast {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 12px;
+  color: #aaa;
+
+  opacity: 0;
+}
+
+/* =========================
+   SPEECH BUBBLE
+========================= */
+.speech-bubble {
+  position: absolute;
+  top: 30px;
+  left: 45px;
+  width: max-content;
+  max-width: 250px;
+  background-color: #191919;
+  color: #f0f0f0;
+  padding: 12px 18px;
+  border-radius: 12px;
+  /* subtle border */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  /* DM Mono Regular */
+  font-size: 13px;
+  line-height: 1.5;
+  pointer-events: none;
+  transform-origin: top left;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: 100%;
+  border-width: 6px 8px 6px 0;
+  border-style: solid;
+  border-color: transparent #191919 transparent transparent;
+}
+
+.header-text {
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+
+.header-bar {
+  width: 97%;
+  overflow: hidden;
+
+
+
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* genelde header için daha iyi */
+  flex-wrap: wrap;
+  /* kritik */
+}
+
+@media (max-width: 768px) {
+  .header-bar {
+    padding: 0 12px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.toolbar {
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 40px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0;
+  padding: 10px;
+  background-color: rgba(55, 66, 77, 0.25);
+  list-style: none;
+}
+
+.toolbarItem {
+  width: 40px;
+  height: 40px;
+  margin: 0 4px;
+}
+
+.toolbarLink {
+  display: block;
+  height: 100%;
+}
+
+.toolbarImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
