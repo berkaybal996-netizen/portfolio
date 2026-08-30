@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react'
-import { BehanceLogo, GithubLogo, GooglePlayLogo, LinkedinLogo } from "@phosphor-icons/react"
+import { BehanceLogo, GithubLogo, GooglePlayLogo, GooglePlayLogoIcon, LinkedinLogo } from "@phosphor-icons/react"
 import DragText from '../../ui/DragText'
 import { useI18n } from '../../../lib/i18n'
 
@@ -12,6 +12,8 @@ const socialLinks = [
     { label: "Behance", href: "https://www.behance.net/berkaybal99", icon: BehanceLogo },
     { label: "GitHub", href: "https://github.com/berkaybal99", icon: GithubLogo },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/berkaybal99", icon: LinkedinLogo },
+    { label: "Google Play", href: "https://play.google.com/store/apps/developer?id=Berkay+BAL", icon: GooglePlayLogoIcon },
+
 ];
 
 const HeroSection = () => {
@@ -39,7 +41,7 @@ const HeroSection = () => {
                 ))}
 
                 <a
-                    href={GOOGLE_PLAY_URL}
+                    href={"https://play.google.com/store/apps/developer?id=Berkay+BAL"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-white/35 bg-white px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-black transition-colors hover:border-white/35 hover:bg-black/35 hover:text-white sm:px-4"
